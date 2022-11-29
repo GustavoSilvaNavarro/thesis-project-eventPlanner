@@ -1,0 +1,14 @@
+.event-details-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 80%;
+  height: 100%;
+}
+
+.description-input {
+  border: 4px solid rgb(62,62,63);;
+  border-radius: 10px;
+  width: 40rem;
+}
