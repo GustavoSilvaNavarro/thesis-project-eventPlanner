@@ -21,21 +21,6 @@ export const createNewUser = async (data: IUser) => {
   }
 };
 
-export const getCurrentUserInfo = async (id: number) => {
-  try {
-    const data = await fetch(`${env.baseUrl}/api/users/get/${id}`, {
-      method: 'GET',
-      mode: 'cors',
-    });
-
-    const currentUserInfo = (await data.json()) as IUser;
-
-    return currentUserInfo;
-  } catch (err) {
-    console.error(err);
-  }
-};
-
 export const modifyUser = async (id: number, data: IEditUser) => {
   try {
     if (!id) return;
