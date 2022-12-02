@@ -1,4 +1,4 @@
-.eventCard__container {
+.card {
   overflow: hidden;
   box-shadow: 0 4px 25px #e1e5ee;
   border-radius: 10px;
@@ -11,35 +11,30 @@
   height: 20rem;
 }
 
-.eventCard__image {
+.card__image {
   height: 12rem;
   width: 100%;
   object-fit: cover;
 }
 
-.eventCard__textContainer {
+.card-text-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.eventCardText__title {
+.card__title {
   padding: 0.5rem;
   font-weight: bold;
   font-size: 24px;
 }
 
-.eventCardText__date {
-  font-weight: bold;
-}
-
-.eventCardText__countdown {
+.card__countdown {
   padding: 0 1rem;
-  font-size: 14px;
 }
 
-.eventCard__container:hover {
+.card:hover {
   transform: scale(1.02);
   background-color: rgb(62,62,63);
   transition: 0.3s;

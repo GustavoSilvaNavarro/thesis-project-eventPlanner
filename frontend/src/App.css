@@ -1,10 +1,11 @@
-.container {
-  display: flex;
+* {
+  font-family: 'Cantarell';
 }
 
-.containerRoutes {
-  flex: 1;
-  padding: 2rem 2rem;
-  height: 100vh;
-  overflow-y: auto;
+.app-container {
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
 }
+
+

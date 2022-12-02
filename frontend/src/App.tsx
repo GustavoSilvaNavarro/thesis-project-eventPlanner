@@ -10,6 +10,8 @@ import { AddMembers } from './components/AddMembers/AddMembers';
 import { AddListItems } from './components/AddListItems/AddListItems';
 import { SingleEvent } from './components/SingleEvent/SingleEvent';
 import { MainPage } from './components/MainPage/MainPage';
+import { NavBar } from './components/NavBar/NavBar';
+import { EventDetails } from './components/EventDetails/EventDetails';
 
 function App() {
   const { isAuthenticated } = useAuth0();
@@ -17,16 +19,11 @@ function App() {
   if (isAuthenticated) {
     return (
       <BrowserRouter>
-        <div className="container">
-          <div className="containerRoutes">
-            <Routes>
-              <Route path="/" element={<MainPage />} />
-              <Route path="/create-event" element={<CreateEvent />} />
-              <Route path="/add-members" element={<AddMembers />} />
-              <Route path="/add-items" element={<AddListItems />} />
-              <Route path="/single-event/:eventId" element={<SingleEvent />} />
-            </Routes>
-          </div>
+      <div className="app-container">
+          <Routes>
+            <Route path="/" element={<MainPage />} />
+            <Route path="/event-details" element={<EventDetails />} />
+          </Routes>
           <NavBar />
         </div>
       </BrowserRouter>
