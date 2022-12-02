@@ -22,3 +22,18 @@ export const createNewEvent = async (data: IEventsData) => {
     console.error(err);
   }
 };
+
+export const getAllEvents = async () => {
+  try {
+    const data = await fetch(`${env.baseUrl}/api/events/all-events`, {
+      method: 'GET',
+      mode: 'cors',
+    });
+
+    const allEvents = (await data.json()) as IEvents[];
+
+    return allEvents;
+  } catch (err) {
+    console.error(err);
+  }
+};

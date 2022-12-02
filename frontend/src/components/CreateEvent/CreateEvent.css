@@ -92,3 +92,9 @@
   -ms-border-radius: 7px;
   -o-border-radius: 7px;
 }
+
+.loading-container {
+    position: absolute;
+    top: 35%;
+    left: 35%;
+}

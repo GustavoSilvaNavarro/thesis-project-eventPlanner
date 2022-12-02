@@ -1,8 +1,7 @@
 .main-page-container{
   display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  width: 80%;
-  height: 100%;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+  width: 100%;
+  gap: 4rem;
 }

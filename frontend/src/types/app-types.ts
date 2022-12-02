@@ -1,7 +1,8 @@
 import { ActualFileObject } from 'filepond';
+import React from 'react';
 export interface IUser {
   id?: number;
-  email: string;
+  email: string | undefined;
   picUrl?: string;
   publicPic_id?: string;
   username?: string;
@@ -21,6 +22,7 @@ export interface ServerErrors {
 
 export interface IUserContext {
   userInfo: IUser | null;
+  setUserInfo: React.Dispatch<IUser>;
 }
 
 export interface IEvents {
@@ -42,4 +44,19 @@ export interface IEventsData {
   eventName: string;
   description: string;
   eventPic: ActualFileObject;
+}
+
+export interface IFileImage {
+  fieldname: string;
+  originalname: string;
+  encoding: string;
+  mimetype: string;
+  destination: string;
+  filename: string;
+  path: string;
+  size: number;
+}
+
+export interface IEditUser extends IUser {
+  userPic: ActualFileObject | string;
 }

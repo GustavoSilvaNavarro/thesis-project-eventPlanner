@@ -18,7 +18,7 @@ export const Login = (): JSX.Element => {
             <button
               onClick={() => void loginWithPopup()}
               type="button"
-              className="relative bg-[#6b705c] hover:bg-[#a5a58d] rounded-md py-2 px-6 text-white text-2xl"
+              className="relative bg-[rgb(62,62,63)] hover:bg-[#fff] rounded-md py-2 px-6 text-white hover:text-[black] border border-gray-500 text-2xl"
             >
               Join us
             </button>

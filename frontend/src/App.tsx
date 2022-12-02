@@ -7,6 +7,8 @@ import { Login } from './components/Login/Login';
 import { NavBar } from './components/NavBar/NavBar';
 import { CreateEvent } from './components/CreateEvent/CreateEvent';
 import { MainPage } from './components/MainPage/MainPage';
+import { Profile } from './components/Profile/Profile';
+import { EditProfile } from './components/EditProfile/EditProfile';
 
 function App() {
   const { isAuthenticated } = useAuth0();
@@ -18,7 +20,9 @@ function App() {
           <div className="containerRoutes">
             <Routes>
               <Route path="/" element={<MainPage />} />
+              <Route path="/profile" element={<Profile />} />
               <Route path="/create-event" element={<CreateEvent />} />
+              <Route path="/edit-form" element={<EditProfile />} />
             </Routes>
           </div>
           <NavBar />
