@@ -62,11 +62,10 @@ export const modifyUserInfo = async (userId: string, data: IUser, picture?: IFil
 
     if (user) {
       user.set({ name, lastName, username, bio });
-
       if (picture) {
         const publicId = user.getDataValue('publicPic_id');
         const result = await uploadImage(picture.path, 'users');
-
+        
         if (publicId) deleteImage(publicId); //TODO Check image was deleted in cloudinary
 
         user.set({

@@ -36,7 +36,6 @@
     "react/prop-types": 0,
     "react/react-in-jsx-scope": 0,
     "@typescript-eslint/no-empty-function": 0,
-    // "@typescript-eslint/no-floating-promises": 0,
     "indent": ["error", 2],
     "keyword-spacing": "error",
     "linebreak-style": ["error", "unix"]

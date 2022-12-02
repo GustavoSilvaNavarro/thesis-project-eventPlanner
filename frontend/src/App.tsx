@@ -10,8 +10,8 @@ import { AddMembers } from './components/AddMembers/AddMembers';
 import { AddListItems } from './components/AddListItems/AddListItems';
 import { SingleEvent } from './components/SingleEvent/SingleEvent';
 import { MainPage } from './components/MainPage/MainPage';
-import { NavBar } from './components/NavBar/NavBar';
-import { EventDetails } from './components/EventDetails/EventDetails';
+import { Profile } from './components/Profile/Profile';
+import { EditProfile } from './components/EditProfile/EditProfile';
 
 function App() {
   const { isAuthenticated } = useAuth0();
@@ -19,11 +19,15 @@ function App() {
   if (isAuthenticated) {
     return (
       <BrowserRouter>
-      <div className="app-container">
-          <Routes>
-            <Route path="/" element={<MainPage />} />
-            <Route path="/event-details" element={<EventDetails />} />
-          </Routes>
+        <div className="container">
+          <div className="containerRoutes">
+            <Routes>
+              <Route path="/" element={<MainPage />} />
+              <Route path="/profile" element={<Profile />} />
+              <Route path="/create-event" element={<CreateEvent />} />
+              <Route path="/edit-form" element={<EditProfile />} />
+            </Routes>
+          </div>
           <NavBar />
         </div>
       </BrowserRouter>

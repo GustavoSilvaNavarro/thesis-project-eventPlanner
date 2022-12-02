@@ -30,8 +30,13 @@
   font-size: 24px;
 }
 
+.card__date {
+  font-weight: bold;
+}
+
 .card__countdown {
   padding: 0 1rem;
+  font-size: 14px;
 }
 
 .card:hover {

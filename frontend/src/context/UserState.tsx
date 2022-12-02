@@ -21,11 +21,10 @@ export const UserState = ({ children }: { children: JSX.Element }) => {
       void createNewUser(userData).then(newUser => {
         if (newUser) {
           if ('email' in newUser) setUserInfo(newUser);
-          else console.log(newUser.description);
         }
       });
     }
   }, [isAuthenticated, user]);
 
-  return <UserContext.Provider value={{ userInfo }}>{children}</UserContext.Provider>;
+  return <UserContext.Provider value={{ userInfo, setUserInfo }}>{children}</UserContext.Provider>;
 };
