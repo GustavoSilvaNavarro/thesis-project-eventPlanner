@@ -2,7 +2,7 @@ import express, { Application } from 'express';
 import { Server as SocketIo } from 'socket.io';
 import { createServer } from 'http';
 import cors from 'cors';
-import morgan from 'morgan';
+// import morgan from 'morgan';
 
 import env from '../config/env';
 import appRoutes from '../routes';
@@ -26,7 +26,7 @@ app.use(
     origin: env.clientAppUrl,
   })
 );
-app.use(morgan('dev'));
+// app.use(morgan('dev'));
 
 app.use('/', appRoutes);
 

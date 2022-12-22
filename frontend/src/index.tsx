@@ -14,7 +14,7 @@ import reportWebVitals from './reportWebVitals';
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
   <React.StrictMode>
-    <Auth0Provider domain={env.domain} clientId={env.clientId} redirectUri="http://localhost:3000">
+    <Auth0Provider domain={env.domain} clientId={env.clientId} redirectUri={env.clientSideUrl}>
       <UserState>
         <SocketState>
           <CurrentEventState>

@@ -21,6 +21,9 @@ export const createNewEvent = async (data: IEventsData) => {
       const response = await fetch(`${env.baseUrl}/api/events`, {
         method: 'POST',
         mode: 'cors',
+        headers: {
+          'Access-Control-Allow-Origin': `${env.baseUrl}`,
+        },
         body: fd,
       });
 
@@ -39,8 +42,9 @@ export const addMembersToEvent = async (userId: number, eventId: number, data: I
         method: 'PATCH',
         mode: 'cors',
         headers: {
-          'Content-Type': 'application/json',
           Accept: 'application/json',
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': `${env.baseUrl}`,
         },
         body: JSON.stringify(data),
       });
@@ -60,8 +64,9 @@ export const addItemsToEvent = async (eventId: number, data: { items: Array<IDat
         method: 'POST',
         mode: 'cors',
         headers: {
-          'Content-Type': 'application/json',
           Accept: 'application/json',
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': `${env.baseUrl}`,
         },
         body: JSON.stringify(data),
       });
@@ -80,6 +85,11 @@ export const getSingleEventInfo = async (eventId: string) => {
       const data = await fetch(`${env.baseUrl}/api/events/single-event/${eventId}`, {
         method: 'GET',
         mode: 'cors',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': `${env.baseUrl}`,
+        },
       });
 
       const event = (await data.json()) as unknown as ISingleEvent;
@@ -95,6 +105,11 @@ export const retrieveAllListOfEvents = async () => {
     const dataList = await fetch(`${env.baseUrl}/api/events/all-events`, {
       method: 'GET',
       mode: 'cors',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': `${env.baseUrl}`,
+      },
     });
 
     const eventList = (await dataList.json()) as IEvents[];
@@ -110,8 +125,9 @@ export const addCollaborator = async (itemId: number, userId: number, eventId: n
       method: 'POST',
       mode: 'cors',
       headers: {
-        'Content-Type': 'application/json',
         Accept: 'application/json',
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': `${env.baseUrl}`,
       },
       body: JSON.stringify({ eventId }),
     });
@@ -129,6 +145,11 @@ export const getListCollaborators = async (itemId: number) => {
       const data = await fetch(`${env.baseUrl}/api/events/collaborations/${itemId}`, {
         method: 'GET',
         mode: 'cors',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': `${env.baseUrl}`,
+        },
       });
 
       const listUsers = (await data.json()) as unknown as IUserAPI[];
@@ -145,6 +166,11 @@ export const removeCollaboration = async (itemId: number, userId: number) => {
       const data = await fetch(`${env.baseUrl}/api/events/collaboration/${itemId}/member/${userId}`, {
         method: 'DELETE',
         mode: 'cors',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': `${env.baseUrl}`,
+        },
       });
 
       const list = (await data.json()) as unknown as IUserAPI[];
@@ -161,6 +187,11 @@ export const retrieveListOfMembers = async (eventId: number) => {
       const data = await fetch(`${env.baseUrl}/api/events/member-list/${eventId}`, {
         method: 'GET',
         mode: 'cors',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': `${env.baseUrl}`,
+        },
       });
 
       const users = (await data.json()) as unknown as IUserAPI[];

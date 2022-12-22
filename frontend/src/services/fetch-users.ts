@@ -7,8 +7,9 @@ export const createNewUser = async (data: IUser) => {
       method: 'POST',
       mode: 'cors',
       headers: {
-        'Content-Type': 'application/json',
         Accept: 'application/json',
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': `${env.baseUrl}`,
       },
       body: JSON.stringify(data),
     });
@@ -27,6 +28,11 @@ export const retrieveMembersList = async (userId: number) => {
       const list = await fetch(`${env.baseUrl}/api/users/all-users/${userId}`, {
         method: 'GET',
         mode: 'cors',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': `${env.baseUrl}`,
+        },
       });
 
       const result = (await list.json()) as IUserAPI[];
@@ -44,6 +50,11 @@ export const getSingleUserInfo = async (userId: number) => {
       const userInfo = await fetch(`${env.baseUrl}/api/users/get/${userId}`, {
         method: 'GET',
         mode: 'cors',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': `${env.baseUrl}`,
+        },
       });
 
       const user = (await userInfo.json()) as unknown as IUserAPI;
@@ -67,6 +78,9 @@ export const modifyUser = async (id: number, data: IEditUser) => {
       const result = await fetch(`${env.baseUrl}/api/users/modify/${id}`, {
         method: 'PUT',
         mode: 'cors',
+        headers: {
+          'Access-Control-Allow-Origin': `${env.baseUrl}`,
+        },
         body: formData,
       });
 
